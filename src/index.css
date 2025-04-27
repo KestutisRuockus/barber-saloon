@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* font family */
+  --font-quicksand: Quicksand, sans-serif;
+  /* background colors */
+  --color-darkest-bg: #060809;
+  --color-dark-bg: #0b0b0c;
+  --color-light-dark-bg: #151517;
+  /* text colors */
+  --colors-light-text
+  /* hover colors */
+  --color-hover-bg: #d1d5db;
+  --color-hover-text: #3a3a3c;
+  /* text sizes */
+  --text-small: 12px;
+  --text-base: 16px;
+  --text-heading: 22px;
+  --text-large: 36px;
+}
