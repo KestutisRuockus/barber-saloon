@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav
       id="navbar"
-      className="w-full lg:w-[90%] xl:w-[80%] mx-auto bg-light-dark-bg min-h-16 flex flex-col md:flex-row justify-center md:justify-between items-center text-white px-4 relative z-0 md:z-10 font-quicksand"
+      className="w-full lg:w-[90%] xl:w-[80%] mx-auto bg-dark-bg min-h-16 flex flex-col md:flex-row justify-center md:justify-between items-center text-white px-4 relative z-0 md:z-10 font-quicksand"
     >
       <img
         src={logo}
@@ -31,7 +31,7 @@ const Navbar = () => {
       <ul
         className={`w-full flex flex-col md:flex-row gap-4 md:gap-8 justify-end items-center py-20 md:py-0 md:mr-8 absolute ${
           open ? "top-0" : "top-[-1000px]"
-        } md:static bg-light-dark-bg text-heading md:text-base z-10 transition-all duration-300 ease-in-out`}
+        } md:static bg-dark-bg text-heading md:text-base z-10 transition-all duration-300 ease-in-out`}
       >
         {links.map((link) => (
           <a
