@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav
       id="navbar"
-      className="bg-light-dark-bg min-h-16 flex flex-col md:flex-row justify-center md:justify-between items-center text-white px-4 relative z-0 md:z-10"
+      className="w-full lg:w-[90%] xl:w-[80%] mx-auto bg-light-dark-bg min-h-16 flex flex-col md:flex-row justify-center md:justify-between items-center text-white px-4 relative z-0 md:z-10 font-quicksand"
     >
       <img
         src={logo}
