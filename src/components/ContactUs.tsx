@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 type FormData = {
   name: string;
@@ -73,13 +74,21 @@ const ContactUs = () => {
       <h1 className="uppercase text-white text-center text-heading font-semibold pb-6">
         Contact Us
       </h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-6 md:flex-row">
-        <div className="flex flex-col gap-4 w-full md:w-1/2">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-6 md:flex-row overflow-hidden"
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -200 }}
+          transition={{ duration: 1.5 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col gap-4 w-full md:w-1/2"
+        >
           <div className="text-white flex gap-4 text-base">
             <span>
               <FontAwesomeIcon icon={faPhone} />
             </span>
-            {/* <p>061234567</p> */}
             {isMobile ? (
               <a href="tel:+37061234567">Call Us</a>
             ) : (
@@ -91,12 +100,18 @@ const ContactUs = () => {
               <FontAwesomeIcon icon={faLocationDot} />
             </span>
             <a href={mapLink} target="_blank" rel="noopener noreferrer">
-              Somewhere 1st St,
+              Somewhere,
               <br /> Kaunas, Lithuania
             </a>
           </div>
-        </div>
-        <div className="flex flex-col gap-4 text-white text-small w-full md:w-1/2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 200 }}
+          transition={{ duration: 1.5 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col gap-4 text-white text-small w-full md:w-1/2"
+        >
           <input
             value={formData.name}
             name="name"
@@ -118,7 +133,7 @@ const ContactUs = () => {
           >
             Send
           </button>
-        </div>
+        </motion.div>
       </form>
     </section>
   );
