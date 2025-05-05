@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav
       id="navbar"
-      className="w-full lg:w-[90%] xl:w-[80%] mx-auto bg-dark-bg min-h-16 flex flex-col md:flex-row justify-center md:justify-between items-center text-white px-4 relative z-0 md:z-10 font-quicksand"
+      className="w-full lg:w-[90%] xl:w-[80%] mx-auto bg-dark-bg min-h-16 flex flex-col md:flex-row justify-center md:justify-between items-center text-white px-4 relative z-30 md:z-10 font-quicksand"
     >
       <img
         src={logo}
@@ -35,6 +35,7 @@ const Navbar = () => {
       >
         {links.map((link) => (
           <a
+            onClick={() => setOpen(false)}
             key={link.name}
             href={`#${link.link}`}
             className="md:hover:border-b-2 md:hover:mb-[-8px] hover:scale-110 transition-all duration-300 border-b-0 border-white "

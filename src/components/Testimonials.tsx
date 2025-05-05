@@ -6,7 +6,7 @@ import {
   faQuoteRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { testimonials } from "../data/testimonials";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Testimonials = () => {
@@ -33,6 +33,22 @@ const Testimonials = () => {
       newDirection,
     ]);
   };
+
+  useEffect(() => {
+    const changeItem = (page: number) => {
+      if (page === testimonials.length - 1) {
+        setPage([0, direction]);
+      } else {
+        setPage(([prevPage]) => [prevPage + 1, direction]);
+      }
+    };
+
+    const interval = setInterval(() => {
+      changeItem(page);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [direction, page]);
 
   return (
     <section className="w-full lg:w-[90%] xl:w-[80%] mx-auto font-quicksand bg-dark-bg px-8 min-[500px]:px-20 min-[600px]:px-30 min-[1500px]:px-60 flex flex-col items-center">
