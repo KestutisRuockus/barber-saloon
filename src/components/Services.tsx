@@ -5,7 +5,10 @@ import haircutBeard from "../assets/icons/haircutBeard.png";
 
 const Services = () => {
   return (
-    <section className="w-full lg:w-[90%] xl:w-[80%] mx-auto font-quicksand bg-dark-bg py-16">
+    <section
+      id="services"
+      className="w-full lg:w-[90%] xl:w-[80%] mx-auto font-quicksand bg-dark-bg py-16"
+    >
       <h1 className="uppercase text-white text-center text-heading font-semibold pb-6">
         our services
       </h1>

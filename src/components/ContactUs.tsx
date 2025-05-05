@@ -54,7 +54,10 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="w-full lg:w-[90%] xl:w-[80%] mx-auto font-quicksand bg-dark-bg px-8 min-[500px]:px-20 min-[600px]:px-30 min-[1500px]:px-60 py-8">
+    <section
+      id="contactUs"
+      className="w-full lg:w-[90%] xl:w-[80%] mx-auto font-quicksand bg-dark-bg px-8 min-[500px]:px-20 min-[600px]:px-30 min-[1500px]:px-60 py-8"
+    >
       <h1 className="uppercase text-white text-center text-heading font-semibold pb-6">
         Contact Us
       </h1>
