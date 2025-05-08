@@ -23,4 +23,9 @@
 
 body {
   background-color: var(--color-light-dark-bg);
+  position: relative;
+}
+
+select option {
+  background-color: var(--color-dark-bg);
 }
