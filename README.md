@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# ✂️ Fade & Blade Barbers
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Fade & Blade Barbers** — a sleek barbershop appointment system built for a modern grooming experience. This project simulates a booking interface tailored for a men's barbershop, featuring smooth UI interactions, dynamic selections, and a bit of thoughtful validation magic.
 
-Currently, two official plugins are available:
+## 🚀 Project Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This app was created as a portfolio piece to explore React context, dynamic state handling, and user experience around service selection and booking logic. It simulates how a client could book a barber appointment based on available barbers, services, time, and date — all in a modal component that feels clean and focused.
 
-## Expanding the ESLint configuration
+## 🧩 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ **Modal-based Booking Flow**: Appointments are made inside a modal window with live selections for:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+  - Barber
+  - Service
+  - Date (via custom calendar)
+  - Time (based on barber's schedule)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 🔁 **Calendar**: Users can switch between weeks and return to the current week easily.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- ⚠️ **Smart Validation**: If a time slot becomes unavailable after changing the barber, the app clears the time and warns the user using toast notifications.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- 🔄 **Appointment Confirmation**: Before final booking, users are shown a confirmation window summarizing all their choices and asked to confirm.
+
+- 💬 **Testimonials**: An automated testimonial slider switches every 5 seconds, with manual navigation also available.
+
+- ✉️ **Contact Form**: A simple form with Web3Forms integration for messaging, complete with validation.
+
+## ⚙️ Tech Stack
+
+- **React (TypeScript)**
+- **Tailwind CSS**
+- **Framer Motion** – animations
+- **React Toastify** – notifications
+- **Font Awesome** – icons
+- **Web3Forms** – simple contact form integration
+
+## 📁 Data & Context
+
+- All static data (barbers, services, schedule) is managed in a `data.ts` file.
+- State is managed using:
+  - `BookingContext` – for appointment data
+  - `ModalContext` – for modal visibility
+
+These contexts enable clean, cross-component data flow without prop drilling.
+
+## 🔮 Future Plans
+
+- Hook into a backend to store barbers, services, and dynamic schedules in a database
+- Build an admin dashboard for managing barbers, appointments, and availability
+
+## 🌐 Live Demo
+
+Check out the live version of the project here: [Fade & Blade Booking App](https://fade-and-blade.netlify.app/)
+
+Explore the interface, try booking an appointment, and see how everything works in action.

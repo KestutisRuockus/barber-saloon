@@ -160,6 +160,17 @@ const Appointment = () => {
   };
 
   const confirmRegistration = () => {
+    const day = selectedDate?.getDate();
+    const month = selectedDate?.toLocaleString("en-US", {
+      month: "long",
+    });
+    const newAppoitment = {
+      barber: selectedBarber,
+      service: selectedService,
+      date: `${month} ${day}`,
+      time: selectedTime,
+    };
+    console.log("New Appointmen data: ", newAppoitment);
     toast.success("Booking confirmed! We look forward to seeing you.");
     setSelectedService("Select Service");
     setServicePrice("0€");
@@ -167,6 +178,7 @@ const Appointment = () => {
     setSelectedDate(today);
     setSelectedTime(null);
     setIsModalVisible(false);
+    toggleConfirmationWindow();
   };
 
   const handleBtnBookAppointment = () => {
